@@ -1,0 +1,46 @@
+﻿@model mvc.Models.VendorModel
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+<fieldset>
+    <legend>VendorModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MsgId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MsgId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DisplayNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DisplayNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Msg_Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Msg_Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Full_Message)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Full_Message)
+    </div>
+
+     
+</fieldset>
+<p>
+ 
+    @Html.ActionLink("Back to List", "VendorIndex")
+</p>

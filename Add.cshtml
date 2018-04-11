@@ -1,0 +1,63 @@
+﻿@model mvc.Models.VendorModel
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add</h2>
+
+@using (Html.BeginForm("Add","Vendor")) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>VendorModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MsgId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MsgId)
+            @Html.ValidationMessageFor(model => model.MsgId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DisplayNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DisplayNo)
+            @Html.ValidationMessageFor(model => model.DisplayNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Msg_Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Msg_Title)
+            @Html.ValidationMessageFor(model => model.Msg_Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Full_Message)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Full_Message)
+            @Html.ValidationMessageFor(model => model.Full_Message)
+        </div>
+
+         
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "VendorIndex")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

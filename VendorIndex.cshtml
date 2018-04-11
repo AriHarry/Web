@@ -1,0 +1,54 @@
+﻿@model IEnumerable<mvc.Models.VendorModel>
+
+@{
+    ViewBag.Title = "VendorIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>VendorIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MsgId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Msg_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Full_Message)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MsgId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Msg_Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Full_Message)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MsgId }) |
+            @Html.ActionLink("Details", "View", new { id = item.MsgId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MsgId })
+        </td>
+    </tr>
+}
+
+</table>
